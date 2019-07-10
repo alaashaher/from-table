@@ -1,16 +1,26 @@
 import React, { useState } from 'react';
 import './index.css'
-import useForm from "./useForm";
 const Form = () => {
-  const { values, handleChange, handleSubmit } = useForm(login);
+  const [values, setValues] = useState({});
+  let jesonValue =[{name:'',counatary:''}];
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    jesonValue.push(values);
+    console.log(jesonValue);
+  };
+
+  const handleChange = (event) => {
+    event.persist();
+    setValues(values => ({ ...values, [event.target.name]: event.target.value }));
+  };
   function login() {
     console.log(values);
   }
 
-  const [rows, setRows] = useState([{}]);
-  const handleRemoveRow = () => {
-      setRows(rows.slice(0, -1));
-  };
+  // const [rows, setRows] = useState([{}]);
+  // const handleRemoveRow = () => {
+  //     setRows(rows.slice(0, -1));
+  // };
 
   return (
     <div className="section is-fullheight">
