@@ -55,7 +55,7 @@ const Form = () => {
                 <td >{values.name}</td>
                 <td >{values.select}</td>
                 <td>
-                  <button type="" className="btn" onClick={handleRemoveRow}>Delete Row</button>
+                  <button type="" className="btn">Delete Row</button>
                 </td>
               </tr>
             </tbody>
