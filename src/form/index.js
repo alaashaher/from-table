@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './index.css'
-import { Table, Button, Input } from "reactstrap";
 
 const Form = () => {
   const [rows, setRows] = useState([{}]);
@@ -27,13 +26,13 @@ const Form = () => {
   };
   return (
     <div>
-      <Table>
+      <table>
         <tbody>
           {rows.map((item, index) => (
             <tr id="addr" key={index}>
               <td>{index}</td>
               <td>
-                <Input
+                <input
                   type="text"
                   name="name"
                   value={rows[index].name}
@@ -49,16 +48,15 @@ const Form = () => {
                 </select>
               </td>
               <td>
-                <Button color="danger" onClick={handleRemoveRow}>
-                  Delete Last Row
-            </Button>
+                <button color="danger" onClick={handleRemoveRow}>
+                  Delete
+            </button>
               </td>
             </tr>
           ))}
         </tbody>
-      </Table>
-      <Button onClick={handleAddRow}>Add Row</Button>
-
+      </table>
+      <button onClick={handleAddRow}>Add Row</button>
     </div>
   );
 };
